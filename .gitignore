@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+.vercel/
+*.log
+diag.mjs
+shot.mjs
+/tmp/

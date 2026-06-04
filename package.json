@@ -1,0 +1,10 @@
+{
+  "name": "zainlatif-com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website for Zain Latif, Founder & CEO of TLG Capital.",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "dev": "python3 -m http.server 8080"
+  }
+}
