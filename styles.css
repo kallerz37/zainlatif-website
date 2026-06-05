@@ -215,13 +215,19 @@ h2 em { color: var(--gold); }
 .hero__content { min-width: 0; }
 @media (max-width: 860px){
   .hero { min-height: auto; padding-top: 6.5rem; }
-  .hero__grid { grid-template-columns: 1fr; gap: 2.2rem; }
-  .hero__visual { order: -1; max-width: 300px; margin: 0 auto; width: 100%; }
-  .hero__portrait { margin: 0 auto; max-height: none; }
+  .hero__grid { grid-template-columns: 1fr; gap: clamp(1.4rem, 5vw, 2rem); }
+  .hero__visual { order: -1; max-width: 260px; margin: 0 auto; width: 100%; }
+  .hero__portrait { margin: 0 auto; max-height: none; box-shadow: 0 24px 50px rgba(33,28,21,.16); }
+  /* on a phone the photo sits directly above the name + role, so the baked-in
+     overlay caption just repeats them — drop it and let the photo be a clean portrait */
+  .hero__visual .hero__portrait-cap { display: none; }
+  .hero__portrait::after { background: linear-gradient(180deg, transparent 70%, rgba(20,16,10,.28) 100%); }
   /* unify alignment: portrait is centered, so center the text & CTAs too */
   .hero__content { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .hero__lede { margin-left: auto; margin-right: auto; }
-  .hero__actions { width: 100%; max-width: 360px; flex-direction: column; gap: .8rem; }
+  .hero__eyebrow { margin-bottom: 1rem; }
+  .hero__title { margin-bottom: 1.1rem; }
+  .hero__lede { margin-left: auto; margin-right: auto; margin-bottom: 1.6rem; }
+  .hero__actions { width: 100%; max-width: 340px; flex-direction: column; gap: .7rem; }
   .hero__actions .btn { width: 100%; justify-content: center; }
 }
 
